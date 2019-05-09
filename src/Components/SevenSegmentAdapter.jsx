@@ -7,6 +7,7 @@ export default function SevenSegmentAdapter({number, colors, className}) {
     colors={Colors.off}
     segments={['a', 'b', 'c', 'd', 'e', 'f', 'g', 'dot']}
     className={'grayglow'}
+
   />;
 
   const segmentMap = new Map(
@@ -27,6 +28,25 @@ export default function SevenSegmentAdapter({number, colors, className}) {
     ]
   );
 
+
+
+  const segmentKaren = new Map(
+    [
+      ['H'['b','c','e','f', 'g']],
+      ['E'['a', 'd', 'e', 'f', 'g']],
+      ['L'['d','e','f']],
+      ['O'['a','b','c', 'd','e','f']],
+    ]
+  )
+
+  if (segmentKaren.has(number[0])){
+    let segments = segmentKaren.get(number[0]);
+    if (number[1] === '.'){
+      segments = segments.concat(segmentKaren.get('.'));
+    }
+    return (<SevenSegment colors={colors} segments={segments} className={className} />)
+  }
+
   if (segmentMap.has(number[0])) {
     let segments = segmentMap.get(number[0]);
     if (number[1] === '.') {
@@ -34,6 +54,7 @@ export default function SevenSegmentAdapter({number, colors, className}) {
     }
     return (<SevenSegment colors={colors} segments={segments} className={className} />);
   }
+
 
   return turnedOff;
 }

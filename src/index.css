@@ -16,6 +16,12 @@ body {
   grid-template-rows: auto;
 }
 
+.karenContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: .75rem;
+  grid-template-rows: auto;
+}
 .array-input {
   grid-column-start: 2;
   grid-column-end: -2;
