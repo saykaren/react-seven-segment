@@ -11,3 +11,4 @@ export default function InputToSevenSegments({number, colors, className}) {
     return sections;
   }, []).map((d, i) => <SevenSegmentAdapter key={i} colors={colors} number={d} className={className}/>);
 };
+

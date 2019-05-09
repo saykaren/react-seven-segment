@@ -32,10 +32,10 @@ export default function SevenSegmentAdapter({number, colors, className}) {
 
   const segmentKaren = new Map(
     [
-      ['H'['b','c','e','f', 'g']],
-      ['E'['a', 'd', 'e', 'f', 'g']],
-      ['L'['d','e','f']],
-      ['O'['a','b','c', 'd','e','f']],
+      ['H',['b','c','e','f', 'g']],
+      ['E',['a', 'd', 'e', 'f', 'g']],
+      ['L',['d','e','f']],
+      ['O',['a','b','c', 'd','e','f']],
     ]
   )
 
