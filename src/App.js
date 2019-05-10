@@ -5,6 +5,10 @@ import InputToSevenSegments from './Components/InputToSevenSegments';
 import Colors from "./Components/Colors";
 import useInterval from './Helpers/useInterval';
 
+var resultKaren = <h1>"hello world"</h1>
+//below is not working giving error with ReactDom must be different library pulling from?
+//ReactDom.render(resultKaren, document.getElementById('root'));
+
 function App() {
 
   const [counter, setCount] = useState(0);
@@ -16,7 +20,10 @@ function App() {
   useInterval(incrememt, 1000);
 
   function wordKaren() {
-    setCount(counter + 10);
+    var result = document.getElementById('inputHere').value;
+    var secondResult = document.getElementById('resultHere');
+    secondResult = result;
+    return secondResult;
   }
 
   return (
@@ -40,6 +47,14 @@ function App() {
             colors={Colors.rainbow}
           />
         </div>
+      </div>
+
+      <div className="App"> 
+        <button onClick={wordKaren}>Trying again</button>
+        <input type="text" id="inputHere"></input>
+        <h2>It is {new Date().toLocaleTimeString()}.</h2>
+        <h2 id="resultHere">I am here</h2>
+
       </div>
     </div>
   );
