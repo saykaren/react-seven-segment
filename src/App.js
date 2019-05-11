@@ -6,6 +6,7 @@ import Colors from "./Components/Colors";
 import useInterval from './Helpers/useInterval';
 import SevenSegmentAdapter from './Components/SevenSegmentAdapter';
 
+
 function App() {
 
   const [counter, setCount] = useState(0);
@@ -17,6 +18,7 @@ function App() {
   }
   useInterval(incrememt, 1000);
 
+<<<<<<< HEAD
   //trying to make it move 
   function danceMove() {
     setLetter("." +endLetter);
@@ -44,6 +46,13 @@ function App() {
       }
     }
 
+=======
+  function wordKaren() {
+    var result = document.getElementById('inputHere').value;
+    var secondResult = document.getElementById('resultHere');
+    secondResult = result;
+    return secondResult;
+>>>>>>> c9d3ba151d8ebf03fea02f55d109c533e48a05a0
   }
 
 
@@ -73,10 +82,37 @@ function App() {
       <button onClick={danceMove}>Count</button>
       <div className={"container"}>
         <InputToSevenSegments
+<<<<<<< HEAD
         number={endLetter+"HELLO"}
         className={"greenglow"}
         colors={Colors.purple}
            />
+=======
+          number={'#  ' + counter}
+          className={'greenglow'}
+          colors={Colors.purple}
+        />
+      </div>
+    
+      <div className="App"> 
+        <button onClick={wordKaren}>Be Creative</button>
+        <input type="text"></input>
+        <div className={"container"}>
+          <InputToSevenSegments
+            number={'# '+ counter}
+            className={'greenglow'}
+            colors={Colors.rainbow}
+          />
+        </div>
+>>>>>>> c9d3ba151d8ebf03fea02f55d109c533e48a05a0
+      </div>
+
+      <div className="App"> 
+        <button onClick={wordKaren}>Trying again</button>
+        <input type="text" id="inputHere"></input>
+        <h2>It is {new Date().toLocaleTimeString()}.</h2>
+        <h2 id="resultHere">I am here</h2>
+
       </div>
     </div>
     
@@ -86,6 +122,10 @@ function App() {
 }
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> c9d3ba151d8ebf03fea02f55d109c533e48a05a0
 
 
 
