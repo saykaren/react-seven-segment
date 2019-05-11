@@ -10,6 +10,7 @@ function App() {
 
   const [counter, setCount] = useState(0);
   const [number, setNumber] = useState(0);
+  const [endLetter, setLetter] = useState(0);
 
   function incrememt() {
     setCount(counter + 1);
@@ -18,12 +19,12 @@ function App() {
 
   //trying to make it move 
   function danceMove() {
-    const result = number+"946";
-    console.log("dance");
+    setLetter("." +endLetter);
+    console.log("dance" + endLetter);
     
   }
 
-  useInterval(danceMove, 5000);
+  //useInterval(danceMove, 5000);
 
   
 
@@ -72,10 +73,10 @@ function App() {
       <button onClick={danceMove}>Count</button>
       <div className={"container"}>
         <InputToSevenSegments
-        number={"HELLO"}
+        number={endLetter+"HELLO"}
         className={"greenglow"}
         colors={Colors.purple}
-        />
+           />
       </div>
     </div>
     
