@@ -80,13 +80,7 @@ function App() {
            />
       </div>
 
-      <div className="App"> 
-        <button onClick={wordKaren}>Trying again</button>
-        <input type="text" id="inputHere"></input>
-        <h2>It is {new Date().toLocaleTimeString()}.</h2>
-        <h2 id="resultHere">I am here</h2>
-
-      </div>
+     
     </div>
     
   );
@@ -95,10 +89,6 @@ function App() {
 }
 
 
-<<<<<<< HEAD
-=======
-
->>>>>>> c9d3ba151d8ebf03fea02f55d109c533e48a05a0
 
 
 
