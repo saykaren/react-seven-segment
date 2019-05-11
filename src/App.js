@@ -5,9 +5,6 @@ import InputToSevenSegments from './Components/InputToSevenSegments';
 import Colors from "./Components/Colors";
 import useInterval from './Helpers/useInterval';
 
-var resultKaren = <h1>"hello world"</h1>
-//below is not working giving error with ReactDom must be different library pulling from?
-//ReactDom.render(resultKaren, document.getElementById('root'));
 
 function App() {
 
