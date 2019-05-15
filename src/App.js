@@ -12,6 +12,7 @@ function App() {
   const [counter, setCount] = useState(0);
   const [number, setNumber] = useState(0);
   const [endLetter, setLetter] = useState(0);
+  const [typing, setTyping] = useState("HELLO");
 
   function incrememt() {
     setCount(counter + 1);
@@ -27,7 +28,10 @@ function App() {
 
   //useInterval(danceMove, 5000);
 
-  
+  function myTyping(event){
+    var value = event.target.value;
+    setTyping(value);
+  }
 
   
 
@@ -72,9 +76,10 @@ function App() {
       // </div>
     <div className="App">
       <button onClick={danceMove}>Count</button>
+      <input type="text" value={typing} onChange={myTyping}></input>
       <div className={"container"}>
         <InputToSevenSegments
-        number={endLetter+"HELLO"}
+        number={typing}
         className={"greenglow"}
         colors={Colors.purple}
            />
