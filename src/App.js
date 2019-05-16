@@ -11,7 +11,7 @@ function App() {
 
   const [counter, setCount] = useState(0);
   const [number, setNumber] = useState(0);
-  const [endLetter, setLetter] = useState(0);
+  const [endLetter, setLetter] = useState("HELLO");
   const [typing, setTyping] = useState("HELLO");
 
   function incrememt() {
@@ -20,11 +20,31 @@ function App() {
   useInterval(incrememt, 1000);
 
   //trying to make it move 
-  function danceMove() {
-    setLetter("." +endLetter);
-    console.log("dance" + endLetter);
-    
+  function danceMove(event) {
+    var result = event.target.value;
+    alert(result.length);
+    if (result.length < 10) {
+    var finalResult = "     "+ result;
+    setLetter(finalResult);
+    setTyping(finalResult);    
+
+    } else {
+      if (result.length > 5) {
+        var smallResult = result.substring(5);
+        alert(smallResult);
+        setLetter(smallResult);
+        setTyping(smallResult);
+      };
+    }
+      
   }
+  
+  //Not here yet...LOL
+  // function dance(){
+  //   setLetter(endLetter + " ");
+  // };
+
+  // useInterval(dance, 5);
 
   //useInterval(danceMove, 5000);
 
@@ -35,21 +55,21 @@ function App() {
 
   
 
-  function setMyNumber(event) {
-    const karen = event.target.value;
-    console.log("got here");
-    setNumber(karen);
-    if (setNumber.length < 10){
-      let result = " "+karen;
-      setNumber(result);
-    } else {
-      if (setNumber.length > 25) {
-        let resultEnd = karen;
-        setNumber(resultEnd);
-      }
-    }
+  // function setMyNumber(event) {
+  //   const karen = event.target.value;
+  //   console.log("got here");
+  //   setNumber(karen);
+  //   if (setNumber.length < 10){
+  //     let result = " "+karen;
+  //     setNumber(result);
+  //   } else {
+  //     if (setNumber.length > 25) {
+  //       let resultEnd = karen;
+  //       setNumber(resultEnd);
+  //     }
+  //   }
 
-  }
+  // }
 
 
   return (
@@ -75,7 +95,7 @@ function App() {
       //   </div>
       // </div>
     <div className="App">
-      <button onClick={danceMove}>Count</button>
+      <button value={endLetter} onClick={danceMove}>Count</button>
       <input type="text" value={typing} onChange={myTyping}></input>
       <div className={"container"}>
         <InputToSevenSegments
