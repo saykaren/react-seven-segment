@@ -10,7 +10,7 @@ import SevenSegmentAdapter from './Components/SevenSegmentAdapter';
 function App() {
 
   const [counter, setCount] = useState(0);
-  const [number, setNumber] = useState(0);
+  const [number, setNumber] = useState("HELLO");
   const [endLetter, setLetter] = useState("HELLO");
   const [typing, setTyping] = useState("HELLO");
 
@@ -22,7 +22,6 @@ function App() {
   //trying to make it move 
   function danceMove(event) {
     var result = event.target.value;
-    alert(result.length);
     if (result.length < 10) {
     var finalResult = "     "+ result;
     setLetter(finalResult);
@@ -31,13 +30,35 @@ function App() {
     } else {
       if (result.length > 5) {
         var smallResult = result.substring(5);
-        alert(smallResult);
         setLetter(smallResult);
         setTyping(smallResult);
       };
     }
-      
   }
+
+  // function danceMoveKaren(event) {
+  //   var result = event.target.value;
+  //   if (result.length < 20) {
+  //     setNumber(" "+number);
+  //   } else {
+  //     setNumber("HELLO");
+  //   };
+   
+  // }
+
+  // useInterval(danceMoveKaren, 1000);
+
+  // function danceMoveIncrement(event){
+  //   var result = event.target.value;
+  //   if (event.length < 20) {
+  //   var finalResult = "     "+ result;
+  //   setLetter(finalResult);
+  //   setTyping(finalResult);    
+  //   }
+  //   setNumber(" "+number);
+  // };
+
+  // useInterval(danceMoveIncrement, 1000)
   
   //Not here yet...LOL
   // function dance(){
@@ -46,7 +67,7 @@ function App() {
 
   // useInterval(dance, 5);
 
-  //useInterval(danceMove, 5000);
+  
 
   function myTyping(event){
     var value = event.target.value;
